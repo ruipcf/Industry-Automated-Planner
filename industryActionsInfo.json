@@ -1,0 +1,42 @@
+[
+    [
+        "InsertPallet(A)",
+        "systemReady & ~Pallet(A)",
+        "Pallet(A) & ~systemReady"
+    ],
+    [
+        "ActiveConveyor",
+        "Pallet(A)",
+        "Conveyor"
+    ],
+    [
+        "SizeMeasure(A)",
+        "Conveyor & Pallet(A)",
+        "gotSize(A)"
+    ],
+    [
+        "StopConveyor",
+        "Conveyor & gotSize(A)",
+        "~Conveyor"
+    ],
+    [
+        "MovePallet(A)",
+        "~Conveyor",
+        "MovingPallet(A)"
+    ],
+    [
+        "onTarget",
+        "MovingPallet(A)",
+        "onTarget(A)"
+    ],
+    [
+        "StorePallet(A)",
+        "onTarget(A)",
+        "PalletStored(A) & ~Pallet(A) & ~gotSize(A)"
+    ],
+    [
+        "back",
+        "PalletStored(A)",
+        "systemReady"
+    ]
+]

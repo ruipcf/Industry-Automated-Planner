@@ -1,0 +1,4 @@
+[
+    "systemReady & ~Pallet(A)",
+    "PalletStored(A)"
+]
